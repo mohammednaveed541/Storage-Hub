@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Files - QuickDrive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    <div class="neon-lines">
+        <div class="neon-line"></div>
+        <div class="neon-line"></div>
+        <div class="neon-line"></div>
+        <div class="neon-line"></div>
+        <div class="neon-line"></div>
+    </div>
+    
+    <header>
+        <div class="logo">
+            <span class="logo-quick">Quick</span><span class="logo-drive">Drive</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="#" class="active">Files</a></li>
+                <li><a href="plans.html">Plans</a></li>
+            </ul>
+        </nav>
+        <div class="auth-button">
+            <button id="userProfileBtn" class="profile-btn" style="display: none;"><i class="fas fa-user"></i> <span id="userName">User</span></button>
+            <button id="loginBtn" class="login-btn"><i class="fas fa-envelope"></i> Login with Email</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="files-section">
+            <div class="files-header">
+                <h1 class="neon-text">Your Files</h1>
+                <div class="files-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchFiles" placeholder="Search files...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <select id="sortFiles">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="name">Name</option>
+                        <option value="size">Size</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="files-container">
+                <div class="files-sidebar">
+                    <ul>
+                        <li class="active"><i class="fas fa-file"></i> All Files</li>
+                        <li><i class="fas fa-image"></i> Images</li>
+                        <li><i class="fas fa-file-pdf"></i> Documents</li>
+                        <li><i class="fas fa-video"></i> Videos</li>
+                        <li><i class="fas fa-music"></i> Audio</li>
+                        <li><i class="fas fa-archive"></i> Archives</li>
+                    </ul>
+                </div>
+                
+                <div class="files-grid" id="filesGrid">
+                    <!-- Files will be loaded here dynamically -->
+                    <div class="no-files-message" id="noFilesMessage">
+                        <i class="fas fa-folder-open"></i>
+                        <p>No files found. Upload some files to get started!</p>
+                        <a href="upload.html" class="upload-now-btn">Upload Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- File Preview Modal -->
+    <div id="filePreviewModal" class="modal">
+        <div class="modal-content file-preview-content">
+            <span class="close">&times;</span>
+            <h2 id="previewFileName">File Name</h2>
+            <div class="file-preview" id="filePreviewContainer">
+                <!-- Preview content will be loaded here -->
+            </div>
+            <div class="file-actions">
+                <button id="downloadFileBtn"><i class="fas fa-download"></i> Download</button>
+                <button id="shareFileBtn"><i class="fas fa-share-alt"></i> Share</button>
+                <button id="deleteFileBtn" class="delete-btn"><i class="fas fa-trash"></i> Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to QuickDrive</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="login-submit-btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create a QuickDrive Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="signup-submit-btn">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="files.js"></script>
+</body>
+</html>
