@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickDrive - Secure Cloud Storage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    <div class="neon-lines">
+        <div class="neon-line"></div>
+        <div class="neon-line"></div>
+        <div class="neon-line"></div>
+        <div class="neon-line"></div>
+        <div class="neon-line"></div>
+    </div>
+    
+    <header>
+        <div class="logo">
+            <span class="logo-quick">Quick</span><span class="logo-drive">Drive</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="files.html">Files</a></li>
+                <li><a href="plans.html">Plans</a></li>
+            </ul>
+        </nav>
+        <div class="auth-button">
+            <button id="loginBtn" class="login-btn"><i class="fas fa-envelope"></i> Login with Email</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="neon-text">A beautiful platform to securely <br>your files anytime.</h1>
+            <p>Upload, organize, and access your files instantly with our seamless cloud storage. Stay connected and in control, whether you're at home, work, or on the go.</p>
+            <button id="getStartedBtn" class="get-started-btn">Get Started</button>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to QuickDrive</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="login-submit-btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create a QuickDrive Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="signup-submit-btn">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
