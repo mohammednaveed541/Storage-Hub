@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Files | QuickDrive</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    <header>
+        <div class="logo">
+            <span class="logo-quick">Quick</span><span class="logo-drive">Drive</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="#" class="active">Files</a></li>
+                <li><a href="plans.html">Plans</a></li>
+            </ul>
+        </nav>
+        <div class="auth-button">
+            <button id="loginBtn" class="login-btn"><i class="fas fa-envelope"></i> Login with Email</button>
+            <button id="userProfileBtn" class="user-profile-btn" style="display:none;">
+                <i class="fas fa-user"></i> <span id="userName"></span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="files-section">
+            <h2>Your Files</h2>
+            <div id="noFilesMessage" class="no-files-message" style="display:none;">
+                <p>No files found. Upload some files to get started!</p>
+            </div>
+            <div id="filesGrid" class="files-grid"></div>
+        </section>
+    </main>
+
+    <!-- File Preview Modal -->
+    <div id="filePreviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="previewFileName"></h3>
+            <div id="filePreviewContainer"></div>
+            <div class="file-modal-actions">
+                <button id="downloadFileBtn" class="modal-btn"><i class="fas fa-download"></i> Download</button>
+                <button id="shareFileBtn" class="modal-btn"><i class="fas fa-share-alt"></i> Share</button>
+                <button id="deleteFileBtn" class="modal-btn"><i class="fas fa-trash"></i> Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login/Signup Modals (same as index.html) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to QuickDrive</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="login-submit-btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+        </div>
+    </div>
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create a QuickDrive Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="signup-submit-btn">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <script src="files.js"></script>
+</body>
+</html>
