@@ -8,6 +8,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        nav {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+    }
+}
+
+    </style>
 </head>
 <body>
     <!-- Background Elements -->
@@ -310,6 +341,16 @@
     </footer>
 
     <!-- Scripts -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.querySelector(".mobile-menu-btn");
+        const nav = document.querySelector("nav");
+
+        menuBtn.addEventListener("click", function () {
+            nav.classList.toggle("active");
+        });
+    });
+</script>
 
     <script src="auth.js"></script>
     <script src="plans.js"></script>
