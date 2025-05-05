@@ -311,7 +311,7 @@ nav ul li a:hover::before, nav ul li a.active::before {
 }
 */
 /* Header Styles */
-header {
+/*header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -441,7 +441,7 @@ nav ul li a:hover::before, nav ul li a.active::before {
 .login-btn:hover::before, .profile-btn:hover::before {
     left: 100%;
 }
-
+*/
 /* Hero Section */
 .hero {
     text-align: center;
