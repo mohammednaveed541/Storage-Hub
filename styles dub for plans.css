@@ -220,7 +220,7 @@ nav ul li a:hover::before, nav ul li a.active::before {
     width: 100%;
 }
 -->*/
-nav ul {
+/* new nav ul {
     display: flex;
     list-style: none;
 }
@@ -258,7 +258,7 @@ nav ul li a:hover, nav ul li a.active {
 nav ul li a:hover::before, nav ul li a.active::before {
     width: 100%;
 }
-
+*/
 .login-btn, .profile-btn {
     background-color: transparent;
     color: var(--light-text);
