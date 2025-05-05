@@ -181,6 +181,45 @@ header {
     }
 }
 
+/*<!-- old navnav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-weight: 500;
+    padding: 5px 0;
+    transition: all 0.3s;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-neon);
+    transition: width 0.3s;
+    box-shadow: 0 0 10px var(--primary-neon);
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--primary-neon);
+    text-shadow: 0 0 5px var(--primary-neon);
+}
+
+nav ul li a:hover::before, nav ul li a.active::before {
+    width: 100%;
+}
+-->*/
 nav ul {
     display: flex;
     list-style: none;
