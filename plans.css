@@ -69,7 +69,7 @@
     border-radius: 20px;
     box-shadow: 0 0 10px var(--primary-neon);
 }
-
+/*
 .plan-header {
     padding: 30px 20px;
     text-align: center;
@@ -81,7 +81,7 @@
     margin-bottom: 15px;
     color: var(--light-text);
 }
-
+*/
 .plan-price {
     display: flex;
     align-items: baseline;
@@ -358,7 +358,7 @@
         border-bottom: 1px solid rgba(0, 255, 221, 0.2);
         padding-bottom: 0;
     }
-    
+/*    
     .sidebar-nav ul {
         display: flex;
         flex-wrap: wrap;
@@ -380,7 +380,7 @@
         border-left: none;
         background-color: rgba(0, 255, 221, 0.2);
     }
-    
+  */  
     .storage-info {
         padding: 20px;
         display: flex;
@@ -410,17 +410,17 @@
 }
 
 @media (max-width: 768px) {
-    header {
+/*    header {
         padding: 15px 20px;
     }
     
     /*nav {
-        display: none;*/
+        display: none;
     }
     
     .mobile-menu-btn {
         display: block;
-    }
+    }*/
     
     .hero h1 {
         font-size: 36px;
